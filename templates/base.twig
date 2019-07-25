@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html {{ fn('get_language_attributes') }}>
+    <head>
+        <title>{{ site.name }} {{ fn('wp_title', '-') }}</title>
+
+        <meta charset="{{ site.charset }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{{ site.description }}">
+
+        {{ fn('wp_head') }}
+    </head>
+
+    <body>
+        {% block content %}
+
+        {% endblock %}
+
+        <footer>
+            {{ fn('wp_footer') }}
+        </footer>
+    </body>
+</html>
