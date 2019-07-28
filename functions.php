@@ -58,7 +58,7 @@ class StarterSite extends Timber\Site
         add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
-        add_action('init', array($this, 'enqueue_assets'));
+        add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'));
         parent::__construct();
     }
 
