@@ -4,6 +4,10 @@
  * Created: 2019-07-25 11:55
  */
 
+define('FS_METHOD', 'direct');
+define('SITE_CACHE', '20190725');
+define('TIMBER_CACHE', false);
+
 /**
  * If you are installing Timber as a Composer dependency in your theme, you'll need this block
  * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
@@ -26,9 +30,6 @@ if (!class_exists('Timber')) {
     });
     return;
 }
-
-define('SITE_CACHE', '20190725');
-define('TIMBER_CACHE', false);
 
 /**
  * Sets the directories (inside your theme) to find .twig files
