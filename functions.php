@@ -58,6 +58,7 @@ class StarterSite extends Timber\Site
         add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
+        add_action('init', array($this, 'register_menus'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'));
         parent::__construct();
     }
@@ -70,6 +71,13 @@ class StarterSite extends Timber\Site
     /** This is where you can register custom taxonomies. */
     public function register_taxonomies() {
 
+    }
+
+    /** This is where you can register custom menus. */
+    public function register_menus() {
+        // register_nav_menus(array(
+        //     'header_menu'   => 'Header Navigation Menu'
+        // ));
     }
 
     public function enqueue_assets() {
