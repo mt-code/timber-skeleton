@@ -50,12 +50,16 @@ class StarterSite extends Timber\Site
 {
     /** Add timber support. */
     public function __construct() {
+        require_once('includes/actions.php');
+        require_once('includes/filters.php');
+        require_once('includes/general.php');
+
         add_theme_support('post-formats');
         add_theme_support('post-thumbnails');
         add_theme_support('menus');
 
         add_filter('timber/context', array($this, 'add_to_context'));
-        add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
+        add_filter('timber/twig', array( $this, 'add_to_twig' ));
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
         add_action('init', array($this, 'register_menus'));
@@ -65,11 +69,13 @@ class StarterSite extends Timber\Site
 
     /** This is where you can register custom post types. */
     public function register_post_types() {
+        require_once('includes/post-types.php');
 
     }
 
     /** This is where you can register custom taxonomies. */
     public function register_taxonomies() {
+        require_once('includes/taxonomies.php');
 
     }
 
