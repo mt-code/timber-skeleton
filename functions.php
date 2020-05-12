@@ -45,7 +45,7 @@ Timber::$autoescape = false;
  * We're going to configure our theme inside of a subclass of Timber\Site
  * You can move this to its own file and include here via php's include("MySite.php")
  */
-class StarterSite extends Timber\Site
+class WordpressSite extends Timber\Site
 {
     /** Add timber support. */
     public function __construct() {
@@ -62,6 +62,7 @@ class StarterSite extends Timber\Site
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
         add_action('init', array($this, 'register_menus'));
+        add_action('init', array($this, 'register_image_sizes'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'));
         parent::__construct();
     }
@@ -69,13 +70,11 @@ class StarterSite extends Timber\Site
     /** This is where you can register custom post types. */
     public function register_post_types() {
         require_once('includes/post-types.php');
-
     }
 
     /** This is where you can register custom taxonomies. */
     public function register_taxonomies() {
         require_once('includes/taxonomies.php');
-
     }
 
     /** This is where you can register custom menus. */
@@ -83,6 +82,11 @@ class StarterSite extends Timber\Site
         // register_nav_menus(array(
         //     'header_menu'   => 'Header Navigation Menu'
         // ));
+    }
+
+    /** This is where you can register custom image sizes */
+    public function register_image_sizes() {
+
     }
 
     public function enqueue_assets() {
@@ -129,4 +133,4 @@ class StarterSite extends Timber\Site
 
 }
 
-new StarterSite();
+new WordpressSite();
