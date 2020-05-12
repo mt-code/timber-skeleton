@@ -4,6 +4,7 @@
  * Created: 2019-07-25 11:55
  */
 
+define('IS_DEBUG', true);
 define('FS_METHOD', 'direct');
 define('SITE_CACHE', 'CACHE_VERSION_HERE');
 
@@ -95,6 +96,11 @@ class WordpressSite extends Timber\Site
 
         // Scripts
         wp_enqueue_script('core', get_template_directory_uri() . '/assets/js/build/main.js', array(), SITE_CACHE, true);
+
+        // AJAX
+        wp_localize_script( 'core-script-localisation', 'site_ajax', [
+            'is_debug' => IS_DEBUG
+        ]);
     }
 
     /** This is where you add some context
