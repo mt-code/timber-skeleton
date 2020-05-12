@@ -5,8 +5,7 @@
  */
 
 define('FS_METHOD', 'direct');
-define('SITE_CACHE', '20190725');
-define('TIMBER_CACHE', false);
+define('SITE_CACHE', 'CACHE_VERSION_HERE');
 
 /**
  * If you are installing Timber as a Composer dependency in your theme, you'll need this block
