@@ -3,7 +3,7 @@ var gulp = require('gulp');
 
 var	concat = require('gulp-concat'),
     rename = require('gulp-rename'),
-    minifyCSS = require('gulp-minify-css'),
+    minifyCSS = require('gulp-clean-css'),
     autoprefixer = require('gulp-autoprefixer'),
     browserify = require('browserify'),
     uglify = require('gulp-uglify'),
